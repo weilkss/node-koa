@@ -6,7 +6,8 @@
     "start": "node bin/www",
     "dev": "./node_modules/.bin/nodemon bin/www",
     "prd": "pm2 start bin/www",
-    "server": "pm2 restart all bin/www"
+    "server": "pm2 restart all bin/www",
+    "delpm": "pm2 delete all"
   },
   "dependencies": {
     "crypto": "^1.0.1",
