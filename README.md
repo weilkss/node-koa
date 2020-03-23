@@ -44,4 +44,6 @@ $ yarn install
 $ npm run dev
 # 永久启动
 $ npm run server
+# 杀死全部进程
+$ npm run delpm
 ```

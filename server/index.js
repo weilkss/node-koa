@@ -1,5 +1,4 @@
 const router = require('koa-router')();
-const qs = require('qs');
 const fetch = require('node-fetch');
 const WXBizDataCrypt = require('./WXBizDataCrypt');
 router.prefix('/node');
