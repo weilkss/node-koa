@@ -1,7 +1,7 @@
 const router = require('koa-router')();
 const fetch = require('node-fetch');
 const WXBizDataCrypt = require('./WXBizDataCrypt');
-router.prefix('/node');
+router.prefix('/api');
 
 const getSessionkey = code => {
   return new Promise((resolve, reject) => {
