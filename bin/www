@@ -24,12 +24,12 @@ var server = http.createServer(app.callback());
  * https
  */
 
-var fs = require('fs')
-var https = require('https');
-var crt = fs.readFileSync('./www.yiwukong.cn.crt')
-var key = fs.readFileSync('./www.yiwukong.cn.rsa')
-var a = { key: key, cert: crt }
-var server = https.createServer(a, app.callback());
+// var fs = require('fs')
+// var https = require('https');
+// var crt = fs.readFileSync('./www.yiwukong.cn.crt')
+// var key = fs.readFileSync('./www.yiwukong.cn.rsa')
+// var a = { key: key, cert: crt }
+// var server = https.createServer(a, app.callback());
 
 /**
  * Listen on provided port, on all network interfaces.

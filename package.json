@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node bin/www",
+    "dev": "nodemon app.js",
     "start": "pm2 start bin/www",
     "restart": "pm2 restart all bin/www",
     "delpm": "pm2 delete all"

@@ -4,14 +4,14 @@ const WXBizDataCrypt = require('./WXBizDataCrypt');
 router.prefix('/api');
 
 const getSessionkey = code => {
+  console.log('code', code);
   return new Promise((resolve, reject) => {
-    const url = `https://api.weixin.qq.com/sns/jscode2session?appid=wx82ea21f4e06bd07e&secret=b6d1eedd4de36a7e96b316a29b1d4f16&js_code=${code}&grant_type=authorization_code`;
-    fetch.get(url, (error, response, data) => {
-      if (error) {
-        reject(err);
-      } else {
-        resolve(data);
-      }
+    const url = `https://api.weixin.qq.com/sns/jscode2session?appid=wx8b4e8a7f1d1e7192&secret=bee9aa87ae69eabe81b543d06d292254&js_code=${code}&grant_type=authorization_code`;
+    fetch(url, {
+      method: 'get'
+    }).then(res => {
+      console.log('res', res);
+      resolve(res);
     });
   });
 };
@@ -23,7 +23,7 @@ const getWXData = async data => {
 };
 
 router.get('/test', async ctx => {
-  ctx.body = 'test';
+  ctx.body = 'test 111';
 });
 
 /** 获取openId */
@@ -31,10 +31,11 @@ router.get('/login/code2Session', async ctx => {
   await getSessionkey(ctx.query.code).then(result => {
     ctx.body = {
       code: 200,
-      data: {
-        session_key: JSON.parse(result).session_key,
-        openId: JSON.parse(result).openid
-      },
+      data:result,
+      // data: {
+      //   session_key: JSON.parse(result).session_key,
+      //   openId: JSON.parse(result).openid
+      // },
       msg: '成功'
     };
   });
